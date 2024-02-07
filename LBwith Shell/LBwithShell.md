@@ -1,10 +1,12 @@
-### using a bash script to configure a load balancer and webserver on AWS
+# Using a bash script to configure a load balancer and webserver on AWS
 
-#Launch EC2 instance
+## Configure the webservers
+
+### Launch 3 EC2 instances and use the information below to configure 2 of them
 
 ![Alt text](<Screenshot 2024-02-06 at 09.42.18.png>)
 
-# Copy the script below
+### Copy the script below
 ```bash
 #!/bin/bash
 
@@ -51,18 +53,19 @@ sudo systemctl restart apache2
 
 ```
 
-# open the VI editor and paste the copied script
+### Open the VI editor and paste the copied script
 ```bash
 sudo vi install.sh
 ```
 
 ![Alt text](<Screenshot 2024-02-06 at 09.44.58.png>)
 
+### Change the permissions on the script to allow it to run
 ```bash
 sudo chmod +x install.sh
 
 ```
-
+### Run the script and pass in the public IP of your EC2 
 ```bash
 ./install.sh PUBLIC_IP
 ```
@@ -74,6 +77,11 @@ sudo chmod +x install.sh
 
 ![Alt text](image-1.png)
 
+## Configure the Load Balancer
+
+### Remember to use the steps above to configure two web servers and then use the 3rd EC2 you provisioned for the steps below
+
+### Copy the script below
 
 ```bash
 #!/bin/bash
@@ -133,6 +141,22 @@ sudo nginx -t
 
 sudo systemctl restart nginx
 ```
+### Open the VI editor and paste the copied script
+```bash
+sudo vi install.sh
+```
+
+### Change the permissions on the script to allow it to run
+```bash
+sudo chmod +x install.sh
+
+```
+### Run the script and pass the public IP of the load balancer and the public IP of the 2 web servers
+```bash
+./install.sh PUBLIC_IP firstWebserver secondWebserver
+```
+
+### Visit the public URL of the load balancer and refresh to see it switch between the 2 webservers
 
 ![Alt text](image-2.png)
 
