@@ -73,7 +73,7 @@ git clone http://github.com/acantril/aws-sysops-associate
 ![Alt text](<Screenshot 2024-02-07 at 11.55.38.png>)
 
 ## this is how to create an hyperlink
-[visit darey.io](https://www.sadiqadeyanju.com)
+[visit sadiqadeyanju.com](https://www.sadiqadeyanju.com)
 
 ## this is how to display code
 `console.log('Welcome to sadiqadeyanju.com')`
