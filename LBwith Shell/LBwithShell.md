@@ -1,7 +1,10 @@
-### Launch EC2 instance
+### using a bash script to configure a load balancer and webserver on AWS
+
+#Launch EC2 instance
+
 ![Alt text](<Screenshot 2024-02-06 at 09.42.18.png>)
 
-
+# Copy the script below
 ```bash
 #!/bin/bash
 
@@ -48,7 +51,7 @@ sudo systemctl restart apache2
 
 ```
 
-
+# open the VI editor and paste the copied script
 ```bash
 sudo vi install.sh
 ```
