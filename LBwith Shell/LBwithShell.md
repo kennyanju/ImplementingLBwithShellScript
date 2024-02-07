@@ -2,7 +2,7 @@
 ![Alt text](<Screenshot 2024-02-06 at 09.42.18.png>)
 
 
-```
+```bash
 #!/bin/bash
 
 ####################################################################################################################
@@ -49,18 +49,18 @@ sudo systemctl restart apache2
 ```
 
 
-```
+```bash
 sudo vi install.sh
 ```
 
 ![Alt text](<Screenshot 2024-02-06 at 09.44.58.png>)
 
-```
+```bash
 sudo chmod +x install.sh
 
 ```
 
-```
+```bash
 ./install.sh PUBLIC_IP
 ```
 
@@ -71,8 +71,8 @@ sudo chmod +x install.sh
 
 ![Alt text](image-1.png)
 
-```
 
+```bash
 #!/bin/bash
 
 ######################################################################################################################
@@ -129,8 +129,6 @@ fi
 sudo nginx -t
 
 sudo systemctl restart nginx
-
-
 ```
 
 ![Alt text](image-2.png)
