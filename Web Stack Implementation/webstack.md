@@ -90,3 +90,37 @@ nano /var/www/projectLEMP/info.php
 ![Alt text](<Screenshot 2024-02-09 at 10.12.48.png>)
 
 ![Alt text](<Screenshot 2024-02-09 at 10.13.59.png>)
+
+## retrieve data from Mysql dtabase with PHP
+We will  create new database with a sample todo list
+
+### create new database
+```bash
+sudo mysql
+mysql> CREATE DATABASE `example_database`;
+```
+
+![Alt text](<Screenshot 2024-02-12 at 09.25.13.png>)
+
+### show databases and create table
+```bash
+SHOW DATABASES
+CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));
+```
+![Alt text](<Screenshot 2024-02-12 at 09.30.27.png>)
+
+
+### create new user and grant permissions
+![Alt text](<Screenshot 2024-02-12 at 09.45.49.png>)
+
+### insert rows and confirm data
+```bash
+CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));
+INSERT INTO example_database.todo_list (content) VALUES ("My first important item");
+```
+![Alt text](<Screenshot 2024-02-12 at 09.33.34.png>)
+![Alt text](<Screenshot 2024-02-12 at 09.36.18.png>)
+
+### connect mysql to php
+![Alt text](<Screenshot 2024-02-12 at 09.38.12.png>)
+![Alt text](<Screenshot 2024-02-12 at 09.45.06.png>)
