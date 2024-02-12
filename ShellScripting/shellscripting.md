@@ -2,14 +2,14 @@
 
 ## Shell scripting synthax elements
 
-###  assign and retrieve a variable
+### assign and retrieve a variable
 
 ```bash
 name="John" 
 echo $name
 
 ```
-Image here
+![Image here](<Screenshot 2024-02-12 at 16.22.23.png>)
 
 ### using control script
 
@@ -28,7 +28,7 @@ else
     echo "The number is zero."
 fi
 ```
-Image2 here
+![Image2 here](<Screenshot 2024-02-12 at 16.23.29.png>)
 
 ```bash
 #!/bin/bash
@@ -41,13 +41,13 @@ do
 done
 
 ```
-image3 here
+![image3 here](<Screenshot 2024-02-12 at 16.24.16.png>)
 
 ### using backtick for command substitution
 ```bash
 current_date=$(date +%Y-%m-%d)
 ```
-image4 here
+![image4 here](<Screenshot 2024-02-12 at 16.25.15.png>)
 
 ### Input output
 ```bash
@@ -58,8 +58,8 @@ echo "hello world" > index.txt
 grep "pattern" < input.txt
 echo "hello world" | grep "pattern"
 ```
-
-image5 here
+![image5 here](<Screenshot 2024-02-12 at 16.28.51.png>)
+![alt text](<Screenshot 2024-02-12 at 16.28.23.png>)
 
 ### functions
 
@@ -76,7 +76,7 @@ greet "John"
 
 ```
 
-image6 here
+![image6 here](<Screenshot 2024-02-12 at 16.29.53.png>)
 
 ### full shell script
 
@@ -84,7 +84,7 @@ image6 here
 mkdir shell-scripting
 touch user-input.sh
 ```
-
+![alt text](<Screenshot 2024-02-12 at 16.31.29.png>)
 ```bash
 #!/bin/bash
 
@@ -102,7 +102,7 @@ image7 here
 sudo chmod +x user-input.sh
 ./user-input.sh
 ```
-image8 here
+![image8 here](<Screenshot 2024-02-12 at 16.32.49.png>)
 
 ### directory manipulation and navigation
 
@@ -110,7 +110,7 @@ image8 here
 mkdir my_directory
 vi navigatinglinux-filesystem.sh 
 ```
-
+![alt text](<Screenshot 2024-02-12 at 16.34.25.png>)
 ```bash
 #!/bin/bash
 
@@ -156,7 +156,7 @@ ls
 sudo chmod +x navigatinglinux-filesystem.sh
 ./navigatinglinux-filesystem.sh
 ```
-
+![alt text](<Screenshot 2024-02-12 at 16.35.28.png>)
 
 ### file operations and sorting
 
@@ -201,17 +201,20 @@ echo "File renamed."
 echo "Final sorted file:"
 cat sorted_files_sorted_alphabetically.txt
 ```
+![alt text](<Screenshot 2024-02-12 at 16.36.49.png>)
 
 ```bash
 sudo chmod +x sorting.sh
 ./sorting.sh
 ```
+![alt text](<Screenshot 2024-02-12 at 16.38.10.png>)
 
 ### numbers and calculations
 
 ```bash
 vi calculations.sh
 ```
+![alt text](<Screenshot 2024-02-12 at 16.41.07.png>)
 
 ```bash
 #!/bin/bash
@@ -249,19 +252,20 @@ echo "Square root of number 2: $square_root"
 sudo chmod +x calculations.sh
 ./calculations.sh
 ```
+![alt text](<Screenshot 2024-02-12 at 16.42.18.png>)
 
 ### file backup and timestamping
 
 ```bash
 vi backup.sh
 ```
-
+![alt text](<Screenshot 2024-02-12 at 16.56.14.png>)
 ```bash
 #!/bin/bash
 
 # Define the source directory and backup directory
-source_dir="/path/to/source_directory"
-backup_dir="/path/to/backup_directory"
+source_dir="/home/kennyanju/shell-scripting"
+backup_dir="/home/kennyanju/backup123"
 
 # Create a timestamp with the current date and time
 timestamp=$(date +"%Y%m%d%H%M%S")
@@ -275,7 +279,7 @@ mkdir -p "$backup_dir_with_timestamp"
 # Copy all files from the source directory to the backup directory
 cp -r "$source_dir"/* "$backup_dir_with_timestamp"
 
-# Display a message indicating the backup process is complete
+# a message indicating the backup process is complete
 echo "Backup completed. Files copied to: $backup_dir_with_timestamp"
 ```
 
@@ -283,3 +287,4 @@ echo "Backup completed. Files copied to: $backup_dir_with_timestamp"
 sudo chmod +x backup.sh
 ./backup.sh
 ```
+![alt text](<Screenshot 2024-02-12 at 16.57.28.png>)
