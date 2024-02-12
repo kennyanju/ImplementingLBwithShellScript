@@ -1,6 +1,6 @@
 # Implement a client server architecutre using mysql DBMS
 
-### create two ec2 instances
+## create two ec2 instances
 
 ### install mysql server on ec2 instance named mysql sever
 
