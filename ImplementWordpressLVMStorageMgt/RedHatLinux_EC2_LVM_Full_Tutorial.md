@@ -18,11 +18,15 @@ This tutorial will guide you through the process of setting up a web server on R
 sudo yum update -y
 ```
 
+![alt text](<Screenshot 2024-02-28 at 09.38.39.png>)
+
 3. Install the Apache web server:
 
 ```bash
 sudo yum install httpd -y
 ```
+
+![alt text](<Screenshot 2024-02-28 at 09.39.31.png>)
 
 4. Start the Apache server:
 
@@ -36,11 +40,15 @@ sudo systemctl start httpd
 sudo systemctl enable httpd
 ```
 
+![alt text](<Screenshot 2024-02-28 at 09.41.00.png>)
+
 ## Step 2: Create and Attach Volumes
 
 1. Go to the EC2 Management Console.
 2. Navigate to Volumes and create three new volumes of 10GB each in the same availability zone as your EC2 instance.
 3. Attach each volume to your EC2 instance using the console.
+
+![alt text](<Screenshot 2024-02-28 at 09.42.54.png>)
 
 ## Step 3: Inspect Block Devices
 
@@ -49,6 +57,7 @@ sudo systemctl enable httpd
 ```bash
 lsblk
 ```
+![alt text](<Screenshot 2024-02-28 at 09.44.32.png>)
 
 ## Step 4: Partition the Disks
 
@@ -60,6 +69,8 @@ sudo fdisk /dev/xvdX
 
 Replace `/dev/xvdX` with the actual device name for each disk.
 
+![alt text](<Screenshot 2024-02-28 at 09.47.01.png>)
+
 ## Step 5: Install LVM Tools
 
 1. Install LVM tools:
@@ -68,11 +79,14 @@ Replace `/dev/xvdX` with the actual device name for each disk.
 sudo yum install lvm2 -y
 ```
 
+![alt text](<Screenshot 2024-02-28 at 09.47.57.png>)
+
 2. Use `lvmdiskscan` to check for available partitions:
 
 ```bash
 sudo lvmdiskscan
 ```
+![alt text](<Screenshot 2024-02-28 at 09.49.06.png>)
 
 ## Step 6: Create Physical Volumes
 
@@ -84,11 +98,14 @@ sudo pvcreate /dev/xvdX1
 
 Replace `/dev/xvdX1` with the partition name for each disk.
 
+![alt text](<Screenshot 2024-02-28 at 09.50.10.png>)
+
 2. Verify the physical volumes:
 
 ```bash
 sudo pvs
 ```
+![alt text](<Screenshot 2024-02-28 at 09.51.02.png>)
 
 ## Step 7: Create a Volume Group
 
@@ -100,11 +117,15 @@ sudo vgcreate web-data-vg /dev/xvdX1 /dev/xvdY1 /dev/xvdZ1
 
 Replace `/dev/xvdX1`, `/dev/xvdY1`, and `/dev/xvdZ1` with your actual partition names.
 
+![alt text](<Screenshot 2024-02-28 at 09.52.18.png>)
+
 2. Verify the volume group:
 
 ```bash
 sudo vgs
 ```
+
+![alt text](<Screenshot 2024-02-28 at 09.53.10.png>)
 
 ## Step 8: Create Logical Volumes
 
@@ -126,6 +147,8 @@ sudo lvcreate -n logs-lv -l 100%FREE web-data-vg
 sudo lvs
 ```
 
+![alt text](<Screenshot 2024-02-28 at 09.54.41.png>)
+
 ## Step 9: Verify the Entire Setup
 
 1. Display the complete setup:
@@ -134,13 +157,15 @@ sudo lvs
 sudo vgdisplay -v
 ```
 
+![alt text](<Screenshot 2024-02-28 at 09.55.27.png>)
+
 2. List the block devices to verify the setup:
 
 ```bash
 sudo lsblk
 ```
 
-Congratulations! You have successfully set up a web server on Red Hat Linux with LVM on Amazon EC2. Your volumes are now prepared, and your server is ready to host your applications.
+![alt text](<Screenshot 2024-02-28 at 09.56.12.png>)
 
 ## Step 10: Format Logical Volumes
 
