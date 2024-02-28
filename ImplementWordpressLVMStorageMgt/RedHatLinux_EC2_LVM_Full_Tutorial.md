@@ -176,6 +176,8 @@ sudo mkfs.ext4 /dev/web-data-vg/apps-lv
 sudo mkfs.ext4 /dev/web-data-vg/logs-lv
 ```
 
+![alt text](<Screenshot 2024-02-28 at 10.08.18.png>)
+
 ## Step 11: Create Directories for Web and Log Data
 
 1. Create a directory for storing website files:
@@ -204,6 +206,8 @@ sudo mount /dev/web-data-vg/apps-lv /var/www/html
 sudo mount /dev/web-data-vg/logs-lv /var/log
 ```
 
+![alt text](<Screenshot 2024-02-28 at 10.09.39.png>)
+
 ## Step 13: Backup and Restore Log Files
 
 1. Use the `rsync` utility to backup all files in the `/var/log` directory to `/home/recovery/logs`:
@@ -218,6 +222,8 @@ sudo rsync -av /var/log/ /home/recovery/logs/
 sudo rsync -av /home/recovery/logs/ /var/log/
 ```
 
+![alt text](<Screenshot 2024-02-28 at 10.10.56.png>)
+
 ## Step 14: Update fstab for Persistent Mounting
 
 1. Edit `/etc/fstab` to add entries for the logical volumes to ensure they are mounted at boot:
@@ -226,6 +232,8 @@ sudo rsync -av /home/recovery/logs/ /var/log/
 echo '/dev/web-data-vg/apps-lv /var/www/html ext4 defaults 0 0' | sudo tee -a /etc/fstab
 echo '/dev/web-data-vg/logs-lv /var/log ext4 defaults 0 0' | sudo tee -a /etc/fstab
 ```
+
+![alt text](<Screenshot 2024-02-28 at 10.11.56.png>)
 
 ## Step 15: Test Configuration and Reload Daemon
 
@@ -241,6 +249,8 @@ sudo mount -a
 sudo systemctl daemon-reload
 ```
 
+![alt text](<Screenshot 2024-02-28 at 10.12.55.png>)
+
 ## Step 16: Verify Your Setup
 
 1. Verify the mounts and filesystems are correctly configured:
@@ -254,6 +264,8 @@ df -h
 ```bash
 lsblk
 ```
+
+![alt text](<Screenshot 2024-02-28 at 10.13.39.png>)
 
 ## Step 17: Launch a Second EC2 Instance for the DB Server
 
