@@ -14,6 +14,11 @@ the tasks are:
 
 launch an ec2 instance and create 3 volumes of 10GB
 
+![alt text](<Screenshot 2024-02-20 at 16.35.38.png>)
+![alt text](<Screenshot 2024-02-20 at 16.36.04.png>)
+![alt text](<Screenshot 2024-02-20 at 16.39.57.png>)
+![alt text](<Screenshot 2024-02-20 at 16.45.39.png>)
+
 ```bash
 lsblk
 df -h
@@ -21,6 +26,10 @@ sudo gdisk /dev/xvdf
 sudo yum install lvm2
 sudo lvmdiskscan
 ```
+
+![alt text](<Screenshot 2024-02-20 at 16.48.11.png>)
+![alt text](<Screenshot 2024-02-20 at 16.51.10.png>)
+![alt text](<Screenshot 2024-02-20 at 16.58.19.png>)
 
 #### use pvcreate ultility to mark each of 3 disks
 
