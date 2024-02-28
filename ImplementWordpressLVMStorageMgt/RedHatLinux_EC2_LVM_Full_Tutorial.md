@@ -276,6 +276,8 @@ lsblk
 
 After launching your second Red Hat EC2 instance intended for the DB Server role, follow these steps to prepare it for use. This process will mirror the preparation of the Web Server with a focus on creating a volume for database storage.
 
+![alt text](<Screenshot 2024-02-28 at 10.21.43.png>)
+
 1. Connect to your DB Server EC2 instance using SSH.
 
 2. Update your system packages:
@@ -295,6 +297,8 @@ sudo yum install lvm2 -y
 ```bash
 lsblk
 ```
+
+![alt text](<Screenshot 2024-02-28 at 10.25.09.png>)
 
 5. Use `fdisk` or `parted` to create a single partition on each of the 3 disks. For example, to partition the first disk:
 
@@ -325,6 +329,8 @@ Replace `/dev/xvdX1`, `/dev/xvdY1`, and `/dev/xvdZ1` with your actual partition 
 ```bash
 sudo lvcreate -n db-lv -l 100%VG db-data-vg
 ```
+
+![alt text](<Screenshot 2024-02-28 at 10.27.55.png>)
 
 9. Format the `db-lv` logical volume with the ext4 file system:
 
@@ -357,6 +363,8 @@ sudo mount -a
 sudo systemctl daemon-reload
 ```
 
+![alt text](<Screenshot 2024-02-28 at 10.29.08.png>)
+
 14. Verify the setup by checking the mounted volumes:
 
 ```bash
@@ -364,7 +372,6 @@ df -h
 ```
 
 At this point, your DB Server is prepared with a dedicated logical volume mounted to `/db`, ready for database installation and configuration.
-Repeat the steps from the tutorial to prepare the DB Server instance. Instead of creating `apps-lv`, create `db-lv` and mount it to the `/db` directory.
 
 ## Step 19: Install WordPress on the Web Server
 
