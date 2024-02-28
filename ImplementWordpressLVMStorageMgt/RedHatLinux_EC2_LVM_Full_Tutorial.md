@@ -394,11 +394,15 @@ sudo systemctl start httpd
 sudo systemctl enable httpd
 ```
 
+![alt text](<Screenshot 2024-02-28 at 10.39.51.png>)
+
 4. Install PHP and its dependencies:
 
 ```bash
-sudo yum install php php-mysql php-gd php-pear -y
+sudo yum install php php-mysqlnd php-gd php-pear -y
 ```
+
+![alt text](<Screenshot 2024-02-28 at 10.43.07.png>)
 
 5. Restart Apache to apply PHP installation:
 
@@ -418,8 +422,9 @@ sudo rsync -av wordpress/ /var/www/html/
 
 ```bash
 sudo chcon -Rt httpd_sys_rw_content_t /var/www/html/
-sudo setsebool -P httpd_can_network_connect 1
+sudo setsebool -P httpd_can_network_connect
 ```
+![alt text](<Screenshot 2024-02-28 at 10.55.18.png>)
 
 ## Step 20: Install MySQL on the DB Server EC2
 
@@ -442,7 +447,7 @@ sudo mysql_secure_installation
 2. Create a WordPress database and user:
 
 ```bash
-mysql -u root -p
+mysql -u root
 CREATE DATABASE wordpress_db;
 CREATE USER 'wordpress_user'@'%' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON wordpress_db.* TO 'wordpress_user'@'%';
@@ -470,5 +475,7 @@ define('DB_HOST', 'DB_Server_IP_Address');
 ```
 
 Replace `DB_Server_IP_Address` with the actual IP address of your DB Server EC2 instance.
+
+![alt text](<Screenshot 2024-02-28 at 11.16.49.png>)
 
 Congratulations! You have successfully installed and configured WordPress on your Web Server EC2 instance to connect to a MySQL database on a separate DB Server EC2 instance.
