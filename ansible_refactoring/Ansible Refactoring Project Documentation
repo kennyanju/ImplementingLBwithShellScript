@@ -17,6 +17,7 @@ The goal of this project is to improve the code arrangement, readability, and sc
 
    ![Create Directory](Images1/1.png)
 
+
 3. **Install the "Copy Artifacts" Plugin in Jenkins**:
    - Log into the Jenkins web console and install the "Copy Artifacts" plugin:
      - Navigate to `Manage Jenkins` > `Plugins` > `Search for "Copy Artifacts"` and install without restarting Jenkins.
