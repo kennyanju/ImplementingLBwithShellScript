@@ -1,4 +1,4 @@
-# AWS VPC Implementation Project Tutorial
+# AWS VPC Implementation Project
 
 ## Introduction
 
@@ -29,7 +29,7 @@ This tutorial will guide you through the process of implementing AWS networking,
 
 **Screenshot 1: VPC Creation**
 
-![Screenshot 1](#)
+![Screenshot 1](1.png)
 
 ---
 
@@ -41,27 +41,27 @@ This tutorial will guide you through the process of implementing AWS networking,
 
    - Public Subnet 1:
      - Name tag: `subnet-public1a`
-     - Availability Zone: `eu-north-1a`
+     - Availability Zone: `us-east-1a`
      - IPv4 CIDR block: `10.0.11.0/24`
      
    - Public Subnet 2:
      - Name tag: `subnet-public2b`
-     - Availability Zone: `eu-north-1b`
+     - Availability Zone: `us-east-1b`
      - IPv4 CIDR block: `10.0.12.0/24`
      
    - Private Subnet 1:
      - Name tag: `subnet-private1a`
-     - Availability Zone: `eu-north-1a`
+     - Availability Zone: `us-east-1a`
      - IPv4 CIDR block: `10.0.1.0/24`
      
    - Private Subnet 2:
      - Name tag: `subnet-private2b`
-     - Availability Zone: `eu-north-1b`
+     - Availability Zone: `us-east-1b`
      - IPv4 CIDR block: `10.0.2.0/24`
 
 **Screenshot 2: Subnet Configuration**
 
-![Screenshot 2](#)
+![Screenshot 2](2.png)
 
 ---
 
@@ -74,7 +74,7 @@ This tutorial will guide you through the process of implementing AWS networking,
 
 **Screenshot 3: Internet Gateway Setup**
 
-![Screenshot 3](#)
+![Screenshot 3](3.png)
 
 ---
 
@@ -92,7 +92,7 @@ This tutorial will guide you through the process of implementing AWS networking,
 
 **Screenshot 4: Route Table Configuration**
 
-![Screenshot 4](#)
+![Screenshot 4](4.png)
 
 ---
 
@@ -105,14 +105,9 @@ This tutorial will guide you through the process of implementing AWS networking,
    - Name tag: `test-vpc-private-rtb`
    - VPC: Select your VPC
 
-5. Edit the route table:
-   - Add a route with destination `0.0.0.0/0` and target as the NAT gateway.
-
-6. Associate the route table with the private subnets.
-
 **Screenshot 5: NAT Gateway Setup**
 
-![Screenshot 5](#)
+![Screenshot 5](5.png)
 
 ---
 
@@ -122,38 +117,19 @@ This tutorial will guide you through the process of implementing AWS networking,
    - Go to `Security Groups` under the VPC dashboard.
    - Create a security group with rules for inbound and outbound traffic as per your requirements.
 
+![Screenshot 6a](6a.png)
+
 2. **Network ACLs:**
    - Go to `Network ACLs` under the VPC dashboard.
    - Create a network ACL and define rules to control traffic at the subnet level.
 
 **Screenshot 6: Security Groups and Network ACLs**
 
-![Screenshot 6](#)
-
----
-
-## 7. VPC Peering and VPN Connection
-
-1. **VPC Peering:**
-   - Go to `Peering Connections` under the VPC dashboard.
-   - Click `Create Peering Connection` and follow the steps to connect two VPCs.
-
-2. **VPN Connection:**
-   - Go to `VPN Connections` under the VPC dashboard.
-   - Click `Create VPN Connection` and configure it to establish a secure connection between your on-premises network and your VPC.
-
-**Screenshot 7: VPC Peering and VPN Connection**
-
-![Screenshot 7](#)
-
----
+![Screenshot 6](6.png)
 
 ## Summary
 
 By following this tutorial, you have successfully implemented a scalable and secure AWS network infrastructure using VPCs, subnets, internet gateways, NAT gateways, and configured security measures.
 
 ---
-
-### Download the tutorial
-
 [AWS VPC Implementation Project Tutorial](#)
