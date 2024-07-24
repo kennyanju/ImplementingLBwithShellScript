@@ -68,7 +68,3 @@ NAT allows devices on a private network to communicate with devices on a public 
 
 ## Conclusion
 By understanding IP addresses and CIDR notation, you can effectively manage and design networks. This knowledge is crucial for configuring network devices, troubleshooting connectivity issues, and planning network infrastructure.
-
----
-
-For more details and practical exercises, enroll in the "IP Addresses and CIDR Notation Demystified" course. This course will enhance your proficiency in working with IP addresses and CIDR notation, preparing you for efficient network management.
