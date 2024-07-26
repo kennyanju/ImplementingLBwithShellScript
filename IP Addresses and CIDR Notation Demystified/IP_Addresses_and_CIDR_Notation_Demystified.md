@@ -6,6 +6,9 @@ Welcome to the "IP Addresses and CIDR Notation Demystified" course, designed to 
 ## Introduction to IP Addresses
 An IP address is a unique identifier for a device on the internet or a local network. It stands for "Internet Protocol," which governs data format and transmission over networks. IP addresses enable information exchange between devices, making them accessible for communication.
 
+![image](https://github.com/user-attachments/assets/ab6ccd5c-e24d-4ddb-ad8f-781181d36bc4)
+
+
 ### What is an IP Address?
 An IP address is a string of numbers separated by periods, typically in the format of four numbers ranging from 0 to 255 (e.g., 192.158.1.38). These addresses are allocated by the Internet Assigned Numbers Authority (IANA) and are crucial for network communication.
 
@@ -16,9 +19,14 @@ Subnetting divides a network into smaller sub-networks (subnets), improving rout
 ### What is a Subnet Mask?
 A subnet mask is a 32-bit address used to differentiate the network and host portions of an IP address. It helps identify the network address and host address, aiding routers in matching destination IP addresses with subnets.
 
+![image](https://github.com/user-attachments/assets/6b2c7936-6f3e-4630-ba37-271637fc1509)
+
 ## CIDR Notation and Address Aggregation
 ### What is CIDR?
 Classless Inter-Domain Routing (CIDR) is an IP address allocation method that improves routing efficiency. CIDR notation, such as /16, represents a block of IP addresses, allowing flexible and efficient address allocation.
+
+![image](https://github.com/user-attachments/assets/409f3590-0cae-4d63-965c-bce221d9e4b8)
+
 
 ### IP Address Aggregation
 IP address aggregation minimizes the number of IP addresses by converting multiple IPv4 addresses into the smallest continuous range possible. This process is commonly used by network engineers for efficient server firewall configurations and routing.
@@ -26,6 +34,8 @@ IP address aggregation minimizes the number of IP addresses by converting multip
 ## IP Address Classes and Private IP Address Ranges
 ### Classful Addressing
 Classful addressing divides IP addresses into five classes (A, B, C, D, E) based on the first few bits. Each class caters to different network sizes, with Class A, B, and C being the most commonly used for general networking purposes.
+
+![image](https://github.com/user-attachments/assets/694151af-c769-47ce-a7d1-0a030a75c73b)
 
 #### Class A Network
 - Used for large networks.
